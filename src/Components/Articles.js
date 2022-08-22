@@ -7,7 +7,6 @@ export default function Articles() {
   useEffect(() => {
     fetchArticles()
       .then(({ data }) => {
-        console.log(data);
         setArticles(data.article);
       })
       .catch((err) => {

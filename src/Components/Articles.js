@@ -16,7 +16,9 @@ export default function Articles() {
 
   return (
     <>
-      <h1>Trending Titles</h1>
+      <section id="trending-titles">
+        <h1>TRENDING TITLES</h1>
+      </section>
       <ul className="article-list">
         {articles.map((article) => {
           return (

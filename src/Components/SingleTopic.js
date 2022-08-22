@@ -1,18 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchArticlesByTopic } from "../api";
 import { useParams } from "react-router-dom";
 
-export default function SingleTopic({ articles, setArticles }) {
+export default function SingleTopic() {
+  const [filteredArticles, setFilteredArticles] = useState([]);
   const { topic } = useParams();
+
   useEffect(() => {
     fetchArticlesByTopic(topic).then((articles) => {
-      setArticles(articles);
+      setFilteredArticles(articles);
     });
   }, [topic]);
 
   return (
     <ul className="article-list">
-      {articles.map((article) => {
+      {filteredArticles.map((article) => {
         return (
           <li key={article.article_id} className="article-list-item">
             <section>

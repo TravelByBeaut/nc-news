@@ -11,22 +11,15 @@ import SingleTopic from "./Components/SingleTopic";
 function App() {
   const [articles, setArticles] = useState([]);
 
-  useEffect(() => {
-    fetchArticles()
-      .then(({ data }) => {
-        setArticles(data.article);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
     <div className="App">
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Articles articles={articles} />}></Route>
+        <Route
+          path="/"
+          element={<Articles articles={articles} setArticles={setArticles} />}
+        ></Route>
         <Route path="/topics" element={<Topics />}></Route>
         <Route
           path="/topics/:topic"

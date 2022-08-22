@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default function Topics() {
   const [topics, setTopics] = useState([]);
-  const [topic, setTopic] = useState("");
 
   useEffect(() => {
     fetchTopics().then(({ data }) => {
@@ -12,24 +11,13 @@ export default function Topics() {
     });
   }, []);
 
-  const handleTopic = (event) => {
-    setTopic(event.target.value);
-  };
-
   return (
     <>
       <section className="topic-section">
         {topics.map((item) => {
           return (
-            <Link to={`/topics/${item.slug}`}>
-              <button
-                className="topic-buttons"
-                key={item.slug}
-                onClick={handleTopic}
-                value={item.slug}
-              >
-                {item.slug}
-              </button>
+            <Link to={`/topics/${item.slug}`} key={item.slug}>
+              <button className="topic-buttons">{item.slug}</button>
             </Link>
           );
         })}

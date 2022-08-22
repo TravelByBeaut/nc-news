@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Topics() {
   const [topics, setTopics] = useState([]);
+  const [topic, setTopic] = useState("");
 
   useEffect(() => {
     fetchTopics().then(({ data }) => {
@@ -12,7 +13,7 @@ export default function Topics() {
   }, []);
 
   const handleTopic = (event) => {
-    setTopics(event.target.value);
+    setTopic(event.target.value);
   };
 
   return (

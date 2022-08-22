@@ -1,19 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchArticles } from "../api";
 
-export default function Articles() {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    fetchArticles()
-      .then(({ data }) => {
-        setArticles(data.article);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+export default function Articles({ articles }) {
   return (
     <>
       <section id="trending-titles">

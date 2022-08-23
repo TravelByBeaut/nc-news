@@ -1,3 +1,3 @@
 export default function Header() {
-  return <h1>Today's News</h1>;
+  return <h1 className="header">Today's News</h1>;
 }

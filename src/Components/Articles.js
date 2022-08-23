@@ -24,9 +24,9 @@ export default function Articles() {
     <h2>Loading...</h2>
   ) : (
     <>
-      <section id="trending-titles">
+      {/* <section id="trending-titles">
         <h1>TRENDING TITLES</h1>
-      </section>
+      </section> */}
       <ul className="article-list">
         <ArticleMap articles={articles} />
       </ul>

@@ -117,6 +117,23 @@
   box-shadow: 2px 2px 2px black;
 }
 
+.comments-section--item {
+  list-style: none;
+  width: 300px;
+  border: 2px solid rgb(53, 0, 128);
+  border-radius: 5%;
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  background-color: lavender;
+  text-align: left;
+}
+
+#comment-author {
+  font-weight: bold;
+  float: left;
+}
+
 @media only screen and (min-width: 600px) {
   .article-list {
     margin-left: 38%;
@@ -125,10 +142,6 @@
     grid-template-rows: relative relative;
     gap: 40px;
     justify-content: center;
-  }
-
-  .article-list-item {
-    width: 350px;
   }
 
   .topic-section {
@@ -142,7 +155,36 @@
     margin-left: 20%;
   }
 
+  .App {
+    display: grid;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 50px 500px;
+    gap: 40px;
+    margin-left: 30%;
+    padding: 20px;
+  }
+
+  .article-list-item {
+    width: 350px;
+    margin-left: 0 auto;
+  }
+
   .single-article {
     width: 500px;
+    margin-left: 1%;
+  }
+
+  .comments-section {
+    float: right;
+    margin-top: 1%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 500px 500px;
+    gap: 40px;
+  }
+
+  .header {
+    margin-left: 30%;
   }
 }

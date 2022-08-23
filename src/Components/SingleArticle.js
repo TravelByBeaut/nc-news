@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticleById } from "../api";
+import { fetchArticleById, fetchCommentsById } from "../api";
 import ArticleCard from "./ArticleCard";
+import Comments from "./Comments";
 import Votes from "./Votes";
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
+  const [comments, setComments] = useState([]);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -14,10 +16,19 @@ export default function SingleArticle() {
     });
   }, [article_id]);
 
+  useEffect(() => {
+    fetchCommentsById(article_id).then(({ comments }) => {
+      setComments(comments);
+    });
+  }, [article_id]);
+
   return (
     <>
-      <ArticleCard article={article} />
-      <Votes article={article} />
+      <section>
+        <ArticleCard article={article} />
+        <Votes article={article} />
+      </section>
+      <Comments comments={comments} />
     </>
   );
 }

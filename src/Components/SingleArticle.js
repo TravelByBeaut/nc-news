@@ -8,25 +8,25 @@ export default function SingleArticle() {
 
   useEffect(() => {
     fetchArticleById(article_id).then(({ article }) => {
-      setArticle(article);
+      setArticle(article[0]);
     });
   }, [article_id]);
 
   return (
     <section>
       <ul className="single-article">
-        <li className="article-list-item" key={article[0].article_id}>
+        <li className="article-list-item" key={article.article_id}>
           <section>
-            <h1 id="article-title">{article[0].title}</h1>
+            <h1 id="article-title">{article.title}</h1>
           </section>
           <section>
-            <h2 id="article-author">{article[0].author}</h2>
+            <h2 id="article-author">{article.author}</h2>
           </section>
-          <section>{article[0].body}</section>
+          <section>{article.body}</section>
           <br />
-          <section>{article[0].created_at}</section>
+          <section>{article.created_at}</section>
           <br />
-          <section>Votes: {article[0].votes}</section>
+          <section>Votes: {article.votes}</section>
           <br />
         </li>
       </ul>

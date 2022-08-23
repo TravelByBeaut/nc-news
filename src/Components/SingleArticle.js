@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../api";
+import ArticleCard from "./ArticleCard";
+import Votes from "./Votes";
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
@@ -13,23 +15,9 @@ export default function SingleArticle() {
   }, [article_id]);
 
   return (
-    <section>
-      <ul className="single-article">
-        <li className="article-list-item" key={article.article_id}>
-          <section>
-            <h1 id="article-title">{article.title}</h1>
-          </section>
-          <section>
-            <h2 id="article-author">{article.author}</h2>
-          </section>
-          <section>{article.body}</section>
-          <br />
-          <section>{article.created_at}</section>
-          <br />
-          <section>Votes: {article.votes}</section>
-          <br />
-        </li>
-      </ul>
-    </section>
+    <>
+      <ArticleCard article={article} />
+      <Votes article={article} />
+    </>
   );
 }

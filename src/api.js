@@ -28,3 +28,13 @@ export const fetchArticleById = (article_id) => {
       return data;
     });
 };
+
+export const updateVotes = (article_id, votes) => {
+  return axios
+    .patch(`https://emily-news-app.herokuapp.com/api/articles/${article_id}`, {
+      inc_votes: votes,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

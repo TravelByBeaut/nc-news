@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
-import { fetchTopics, fetchArticles } from "./api";
 import "./App.css";
 import Articles from "./Components/Articles";
 import Header from "./Components/Header";
 import NavBar from "./Components/NavBar";
 import Topics from "./Components/Topics";
 import { Route, Routes } from "react-router-dom";
-import SingleTopic from "./Components/SingleTopic";
 
 function App() {
-  const [articles, setArticles] = useState([]);
-
   return (
     <div className="App">
       <Header />
       <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Articles articles={articles} setArticles={setArticles} />}
-        ></Route>
+        <Route path="/" element={<Articles />}></Route>
         <Route path="/topics" element={<Topics />}></Route>
-        <Route
-          path="/topics/:topic"
-          element={
-            <SingleTopic articles={articles} setArticles={setArticles} />
-          }
-        ></Route>
+        <Route path="/topics/:topic" element={<Articles />}></Route>
       </Routes>
     </div>
   );

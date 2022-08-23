@@ -1,16 +1,30 @@
 import { useState, useEffect } from "react";
-import { fetchArticles } from "../api";
+import { fetchArticles, fetchArticlesByTopic } from "../api";
+import { useParams } from "react-router-dom";
 
-export default function Articles({ articles, setArticles }) {
+export default function Articles() {
+  const [articles, setArticles] = useState([]);
+  const { topic } = useParams();
+
   useEffect(() => {
-    fetchArticles()
-      .then(({ data }) => {
-        setArticles(data.article);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    if (!topic) {
+      fetchArticles()
+        .then(({ data }) => {
+          setArticles(data.article);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      fetchArticlesByTopic(topic)
+        .then((res) => {
+          setArticles(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [topic]);
 
   return (
     <>

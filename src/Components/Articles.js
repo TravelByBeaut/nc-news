@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchArticles, fetchArticlesByTopic } from "../api";
+import { fetchArticles } from "../api";
 import { useParams } from "react-router-dom";
 
 export default function Articles() {
@@ -7,23 +7,13 @@ export default function Articles() {
   const { topic } = useParams();
 
   useEffect(() => {
-    if (!topic) {
-      fetchArticles()
-        .then(({ data }) => {
-          setArticles(data.article);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      fetchArticlesByTopic(topic)
-        .then((res) => {
-          setArticles(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    fetchArticles({ topic })
+      .then(({ data }) => {
+        setArticles(data.article);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [topic]);
 
   return (

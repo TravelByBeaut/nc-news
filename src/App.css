@@ -71,6 +71,19 @@
   box-shadow: 3px 3px 3px grey;
 }
 
+.article-link {
+  text-decoration: none;
+  color: black;
+}
+.article-link:visited {
+  color: black;
+}
+
+.single-article {
+  width: 300px;
+  list-style: none;
+}
+
 @media only screen and (min-width: 600px) {
   .article-list {
     margin-left: 40%;
@@ -90,5 +103,9 @@
 
   .topic-buttons {
     margin-left: 20%;
+  }
+
+  .single-article {
+    width: 500px;
   }
 }

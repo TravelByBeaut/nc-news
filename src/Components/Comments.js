@@ -6,12 +6,9 @@ export default function Comments({ comments, setComments }) {
       <br />
       <ul>
         <PostComment comments={comments} setComments={setComments} />
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-            <section
-              key={comment.comment_id}
-              className="comments-section--item"
-            >
+            <section key={index} className="comments-section--item">
               <li id="comment-author">{comment.author}</li>
               <br />
               <li>{comment.created_at}</li>

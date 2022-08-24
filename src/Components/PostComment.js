@@ -1,10 +1,9 @@
-import { useId, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { sendComment } from "../api";
 
 export default function PostComment({ comments, setComments }) {
   const [comment, setComment] = useState({ author: "tickle122" });
-  const id = useId;
   const { article_id } = useParams();
 
   const handleBody = (event) =>
@@ -20,16 +19,13 @@ export default function PostComment({ comments, setComments }) {
     setComments((currComment) => {
       const commentCopy = [...currComment];
       comment.created_at = "Just Now";
-      comment.comment_id = id;
       commentCopy.unshift(comment);
       return commentCopy;
     });
     sendComment(article_id, comment.author, comment.body)
       .then(() => {
-        event.target.reset();
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
+        const textarea = document.querySelector("textarea");
+        textarea.value = "";
       })
       .catch((err) => {
         console.log(err);
@@ -44,7 +40,7 @@ export default function PostComment({ comments, setComments }) {
           value={comment.body}
           onChange={handleBody}
           required="required"
-        />{" "}
+        />
         <button id="votes" type="submit">
           Post Comment
         </button>

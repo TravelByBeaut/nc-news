@@ -197,6 +197,10 @@ li {
 
   form {
     text-align: left;
+    display: grid;
+    width: 300px;
+    margin-left: 20px;
+    height: 200px;
   }
   input {
     margin-bottom: 15px;

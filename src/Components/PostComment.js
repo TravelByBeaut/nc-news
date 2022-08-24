@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { sendComment } from "../api";
 
 export default function PostComment({ comments, setComments }) {
@@ -29,9 +29,7 @@ export default function PostComment({ comments, setComments }) {
       return commentCopy;
     });
     sendComment(article_id, comment.author, comment.body)
-      .then(() => {
-        // window.location.reload(false);
-      })
+      .then(() => {})
       .catch((err) => {
         console.log(err);
       });
@@ -46,7 +44,7 @@ export default function PostComment({ comments, setComments }) {
           onChange={handleAuthor}
           required="required"
         />{" "}
-        <input
+        <textarea
           placeholder="description"
           value={comments.body}
           onChange={handleBody}

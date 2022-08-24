@@ -17,8 +17,6 @@ export default function Comments({ comments, setComments }) {
               <li>{comment.created_at}</li>
               <br />
               <li>{comment.body}</li>
-              <br />
-              <li>Votes: {comment.votes}</li>
             </section>
           );
         })}

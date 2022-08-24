@@ -50,11 +50,9 @@ export const fetchCommentsById = (article_id) => {
 };
 
 export const sendComment = (article_id, username, body) => {
-  console.log(username, body);
-
   return axios
     .post(
-      `https://emily-news-app.herokuapp.com/api/articles/${article_id}/comments?order_by=asc`,
+      `https://emily-news-app.herokuapp.com/api/articles/${article_id}/comments`,
       {
         username,
         body,

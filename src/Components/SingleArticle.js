@@ -24,11 +24,11 @@ export default function SingleArticle() {
 
   return (
     <>
-      <section>
+      <section className="single-article-section">
         <ArticleCard article={article} />
         <Votes article={article} />
       </section>
-      <Comments comments={comments} />
+      <Comments comments={comments} setComments={setComments} />
     </>
   );
 }

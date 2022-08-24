@@ -1,8 +1,11 @@
-export default function Comments({ comments }) {
+import PostComment from "./PostComment";
+
+export default function Comments({ comments, setComments }) {
   return (
     <section className="comments-section">
       <br />
       <ul>
+        <PostComment comments={comments} setComments={setComments} />
         {comments.map((comment) => {
           return (
             <section

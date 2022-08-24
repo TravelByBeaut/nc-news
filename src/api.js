@@ -48,3 +48,19 @@ export const fetchCommentsById = (article_id) => {
       return data;
     });
 };
+
+export const sendComment = (article_id, username, body) => {
+  console.log(username, body);
+
+  return axios
+    .post(
+      `https://emily-news-app.herokuapp.com/api/articles/${article_id}/comments?order_by=asc`,
+      {
+        username,
+        body,
+      }
+    )
+    .then(({ data }) => {
+      return data;
+    });
+};

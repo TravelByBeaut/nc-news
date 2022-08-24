@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+li {
+  break-inside: avoid-column;
+}
+
 .navbar-section {
   padding-bottom: 20px;
 }
@@ -136,12 +140,11 @@
 
 @media only screen and (min-width: 600px) {
   .article-list {
-    margin-left: 38%;
-    display: grid;
-    grid-template-columns: 400px 400px 400px 400px;
-    grid-template-rows: relative relative;
-    gap: 40px;
-    justify-content: center;
+    width: 95%;
+    flex: 1;
+    columns: 4;
+    padding: 0;
+    margin: 5;
   }
 
   .topic-section {
@@ -156,12 +159,8 @@
   }
 
   .App {
-    display: grid;
-    grid-template-columns: 300px 600px;
-    grid-template-rows: 50px 500px;
-    gap: 40px;
-    margin-left: 30%;
-    padding: 20px;
+    display: inline-block;
+    width: 100%;
   }
 
   .article-list-item {
@@ -171,7 +170,6 @@
 
   .single-article {
     width: 500px;
-    margin-left: 1%;
   }
 
   .comments-section {
@@ -184,7 +182,16 @@
     gap: 40px;
   }
 
+  .single-article-section {
+    width: 400px;
+    display: inline-block;
+  }
+
   .header {
-    margin-left: 30%;
+    grid-area: header;
+  }
+
+  .navbar-section {
+    grid-area: nav;
   }
 }

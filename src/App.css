@@ -194,4 +194,11 @@ li {
   .navbar-section {
     grid-area: nav;
   }
+
+  form {
+    text-align: left;
+  }
+  input {
+    margin-bottom: 15px;
+  }
 }

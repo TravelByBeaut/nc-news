@@ -38,7 +38,7 @@ export default function PostComment({ comments, setComments }) {
   };
 
   return (
-    <div className="list-items">
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <input
           placeholder="author"

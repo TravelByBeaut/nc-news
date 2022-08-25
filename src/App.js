@@ -6,21 +6,31 @@ import Topics from "./Components/Topics";
 import { Route, Routes } from "react-router-dom";
 import SingleArticle from "./Components/SingleArticle";
 import User from "./Components/User";
+import Errors from "./Components/Errors";
+import { errContext, isErrorContext } from "./Components/Errors";
+import { useState } from "react";
 
 function App() {
+  const [errObj, setErrObj] = useState(null);
+  const [isError, setIsError] = useState(false);
   return (
-    <div className="App">
-      <Header />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Articles />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/topics" element={<Topics />} />
-        <Route path="/topics/:topic" element={<Articles />} />
-        <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route path="/user" element={<User />} />
-      </Routes>
-    </div>
+    <errContext.Provider value={{ errObj, setErrObj }}>
+      <isErrorContext.Provider value={{ isError, setIsError }}>
+        <div className="App">
+          <Header />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Articles />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/topics" element={<Topics />} />
+            <Route path="/articles/:topic" element={<Articles />} />
+            <Route path="/article/:article_id" element={<SingleArticle />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/*" element={<Errors />} />
+          </Routes>
+        </div>
+      </isErrorContext.Provider>
+    </errContext.Provider>
   );
 }
 

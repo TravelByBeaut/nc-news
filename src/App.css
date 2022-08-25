@@ -16,6 +16,7 @@ li {
   background-color: lavender;
   border: 2px solid black;
   border-radius: 10%;
+  font-weight: bold;
 }
 .navbar-button:active {
   box-shadow: 2px 2px 2px grey;
@@ -136,6 +137,19 @@ li {
 #comment-author {
   font-weight: bold;
   float: left;
+}
+
+.dropdown {
+  background-color: lavender;
+  border: 2px solid rgb(53, 0, 128);
+  border-radius: 5%;
+  margin: 5px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.options {
+  background-color: rgb(212, 193, 238);
 }
 
 @media only screen and (min-width: 600px) {

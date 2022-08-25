@@ -11,6 +11,9 @@ export default function ArticleCard({ article }) {
         <section>{article.body}</section>
         <br />
         <section>{article.created_at}</section>
+        <br />
+        <section>Comment count: {article.comment_count}</section>
+        <section>Votes: {article.votes}</section>
       </li>
     </ul>
   );

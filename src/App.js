@@ -12,10 +12,11 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Articles />}></Route>
-        <Route path="/topics" element={<Topics />}></Route>
-        <Route path="/topics/:topic" element={<Articles />}></Route>
-        <Route path="/articles/:article_id" element={<SingleArticle />}></Route>
+        <Route path="/" element={<Articles />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/topics" element={<Topics />} />
+        <Route path="/topics/:topic" element={<Articles />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
       </Routes>
     </div>
   );

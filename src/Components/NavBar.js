@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <section className="navbar-section">
-      <Link to={"/"}>
+      <Link to={"/articles"}>
         <button className="navbar-button">ARTICLES</button>
       </Link>
       <Link to={"/topics"}>

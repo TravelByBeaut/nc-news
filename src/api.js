@@ -63,3 +63,17 @@ export const sendComment = (article_id, username, body) => {
       return data;
     });
 };
+
+export const deleteComment = (comment_id) => {
+  return axios.delete(
+    `https://emily-news-app.herokuapp.com/api/comments/${comment_id}`
+  );
+};
+
+export const fetchUsers = () => {
+  return axios
+    .get("https://emily-news-app.herokuapp.com/api/users")
+    .then(({ data }) => {
+      return data;
+    });
+};

@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { sendComment } from "../api";
 
-export default function PostComment({ comments, setComments }) {
-  const [comment, setComment] = useState({ author: "tickle122" });
+export default function PostComment({ comment, setComment, setComments }) {
   const { article_id } = useParams();
 
   const handleBody = (event) =>

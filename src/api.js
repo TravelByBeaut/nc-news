@@ -69,3 +69,11 @@ export const deleteComment = (comment_id) => {
     `https://emily-news-app.herokuapp.com/api/comments/${comment_id}`
   );
 };
+
+export const fetchUsers = () => {
+  return axios
+    .get("https://emily-news-app.herokuapp.com/api/users")
+    .then(({ data }) => {
+      return data;
+    });
+};

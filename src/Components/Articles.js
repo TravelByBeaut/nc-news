@@ -11,8 +11,6 @@ export default function Articles() {
   const [order_by, setOrder_by] = useState("desc");
   const { topic } = useParams();
 
-  console.log(sort_by, order_by);
-
   useEffect(() => {
     setIsLoading(true);
     fetchArticles({ topic, sort_by, order_by })

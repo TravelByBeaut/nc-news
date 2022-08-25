@@ -39,7 +39,7 @@ export default function PostComment({ comment, setComment, setComments }) {
           onChange={handleBody}
           required="required"
         />
-        <button id="votes" type="submit">
+        <button id="comment-button" type="submit">
           Post Comment
         </button>
       </form>

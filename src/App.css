@@ -34,7 +34,6 @@ li {
 .article-list {
   width: 300px;
   list-style: none;
-  margin: 10px;
   padding: 20px;
 }
 
@@ -51,7 +50,8 @@ li {
 }
 
 .topic-section {
-  width: 400px;
+  margin: auto;
+  width: 350px;
   border: 5px solid rgb(53, 0, 128);
 }
 
@@ -67,7 +67,7 @@ li {
   border: 2px solid black;
   border-radius: 5%;
   padding: 20px;
-  margin: 50px;
+  margin: 50px auto;
   font-size: larger;
   text-transform: uppercase;
 }
@@ -94,11 +94,31 @@ li {
   padding: 0;
   float: left;
   display: grid;
-  grid-template-columns: 150px 100px 150px;
+  grid-template-columns: 100px 100px 100px;
+}
+
+form {
+  display: inline-grid;
+  width: 250px;
+  height: 200px;
+}
+
+#comment-button {
+  width: 150px;
+  height: 30px;
+  border: 2px solid rgb(53, 0, 128);
+  border-radius: 5%;
+  background-color: rgb(147, 130, 231);
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  text-align: left;
+  margin-left: 0px;
+  text-align: center;
 }
 
 #votes {
-  width: 150px;
+  width: 100px;
   height: 30px;
   border: 2px solid rgb(53, 0, 128);
   border-radius: 5%;
@@ -124,11 +144,11 @@ li {
 
 .comments-section--item {
   list-style: none;
-  width: 300px;
+  width: 250px;
   border: 2px solid rgb(53, 0, 128);
   border-radius: 5%;
   float: left;
-  margin: 20px;
+  margin: 20px auto;
   padding: 20px;
   background-color: lavender;
   text-align: left;
@@ -177,10 +197,26 @@ li {
 .user-avatar {
   margin: 20px;
   padding: 20px;
-  width: 300px;
+  width: 250px;
   border: 8px solid rgb(53, 0, 128);
   border-style: double;
   border-radius: 5%;
+}
+
+.home-button {
+  border: 2px solid rgb(53, 0, 128);
+  border-radius: 5%;
+  background-color: rgb(147, 130, 231);
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  width: 100px;
+}
+.home-button:hover {
+  background-color: pink;
+}
+.home-button:active {
+  box-shadow: 2px 2px 2px grey;
 }
 
 @media only screen and (min-width: 600px) {
@@ -194,13 +230,13 @@ li {
 
   .topic-section {
     margin-top: 10px;
-    margin-left: 42%;
-    width: 300px;
+    margin-left: 40%;
+    width: 350px;
     border: 5px solid rgb(53, 0, 128);
   }
 
   .topic-buttons {
-    margin-left: 20%;
+    margin: 50px auto;
   }
 
   .App {
@@ -227,9 +263,40 @@ li {
     gap: 40px;
   }
 
+  .comments-section--item {
+    width: 300px;
+  }
+
   .single-article-section {
     width: 400px;
     display: inline-block;
+  }
+
+  .votes-buttons {
+    margin-left: 40px;
+    padding: 0;
+    float: left;
+    display: grid;
+    grid-template-columns: 150px 100px 150px;
+  }
+  #votes {
+    width: 150px;
+    height: 30px;
+    border: 2px solid rgb(53, 0, 128);
+    border-radius: 5%;
+    background-color: rgb(147, 130, 231);
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    text-align: left;
+    margin-left: 0px;
+    text-align: center;
+  }
+  #votes-text {
+    width: 100px;
+    height: 30px;
+    background-color: lavender;
+    margin-top: 0;
   }
 
   .header {
@@ -249,5 +316,9 @@ li {
   }
   input {
     margin-bottom: 15px;
+  }
+
+  .user-avatar {
+    width: 300px;
   }
 }

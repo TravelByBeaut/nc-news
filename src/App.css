@@ -201,8 +201,8 @@ form {
 }
 
 .comments-section--item__deleted {
-  visibility: hidden;
-  opacity: 0;
+  background-color: pink;
+  opacity: 0.2;
 }
 
 .user-avatar {

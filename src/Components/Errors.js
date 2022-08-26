@@ -13,7 +13,6 @@ export default function Errors() {
   const handleRefresh = () => {
     setIsError(false);
     navigate("/");
-    // window.location.reload();
   };
   if (!errObj) {
     return (
@@ -28,7 +27,6 @@ export default function Errors() {
       </>
     );
   }
-  console.log(errObj);
   return (
     <>
       <h1>{errObj.response.request.status}</h1>

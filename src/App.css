@@ -127,6 +127,9 @@ form {
   margin-left: 0px;
   text-align: center;
 }
+#comment-button:active {
+  box-shadow: 2px 2px 2px black;
+}
 
 #votes {
   width: 100px;

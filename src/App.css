@@ -43,6 +43,7 @@ li {
   margin-bottom: 2%;
   padding: 20px;
   background-color: lavender;
+  margin-right: 50px;
 }
 
 #article-title {
@@ -85,8 +86,15 @@ li {
 }
 
 .single-article {
-  width: 300px;
+  width: 350px;
   list-style: none;
+  padding-left: 10%;
+}
+
+@media only screen and (min-width: 400px) {
+  .single-article {
+    padding-left: 15%;
+  }
 }
 
 .votes-buttons {
@@ -219,7 +227,47 @@ form {
   box-shadow: 2px 2px 2px grey;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .article-list {
+    width: 95%;
+    flex: 1;
+    columns: 2;
+    padding: 20px;
+    margin: 5;
+  }
+
+  .single-article {
+    width: 500px;
+    padding-left: 20%;
+  }
+
+  .votes-buttons {
+    margin-left: 23%;
+    padding: 0;
+    float: left;
+    display: grid;
+    grid-template-columns: 150px 100px 150px;
+  }
+  #votes {
+    width: 150px;
+  }
+  form {
+    margin: 20px 50% auto auto;
+    width: 400px;
+  }
+
+  textarea {
+    margin-bottom: 20px;
+  }
+  .comments-section {
+    margin-left: 20%;
+  }
+  .comments-section--item {
+    width: 350px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
   .article-list {
     width: 95%;
     flex: 1;
@@ -247,10 +295,12 @@ form {
   .article-list-item {
     width: 350px;
     margin-left: 0 auto;
+    margin-right: auto;
   }
 
   .single-article {
     width: 500px;
+    padding-left: 10%;
   }
 
   .comments-section {

@@ -81,7 +81,7 @@ li {
   width: 350px;
   height: fit-content;
   list-style: none;
-  padding-left: 10%;
+  padding-left: 5%;
   font-size: large;
 }
 #comment-button:active {

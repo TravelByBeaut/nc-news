@@ -22,15 +22,6 @@ li {
   box-shadow: 2px 2px 2px grey;
 }
 
-#trending-titles {
-  margin-top: 1%;
-  width: 90%;
-  margin-left: 4%;
-  border: 5px solid rgb(53, 0, 128);
-  border-radius: 1%;
-  background-color: transparent;
-}
-
 .article-list {
   width: 300px;
   list-style: none;

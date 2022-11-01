@@ -43,9 +43,6 @@ export default function Articles() {
             setOrder_by={setOrder_by}
             order_by={order_by}
           />
-          <section id="trending-titles">
-            <h1>TRENDING TITLES</h1>
-          </section>
           <ul className="article-list">
             <ArticleMap articles={articles} />
           </ul>

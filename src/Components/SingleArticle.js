@@ -43,7 +43,9 @@ export default function SingleArticle() {
       ) : (
         <>
           <section className="single-article-section">
-            <ArticleCard article={article} />
+            <section className="margin-article">
+              <ArticleCard article={article} />
+            </section>
             <Votes article={article} />
           </section>
           <Comments comments={comments} setComments={setComments} />

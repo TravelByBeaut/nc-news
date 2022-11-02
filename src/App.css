@@ -76,12 +76,14 @@ li {
 .article-link:visited {
   color: black;
 }
-
+.margin-article {
+  margin-left: 4%;
+}
 .single-article {
   width: 350px;
   height: fit-content;
   list-style: none;
-  padding-left: 5%;
+  padding-left: 7%;
   font-size: large;
 }
 #comment-button:active {
@@ -101,10 +103,13 @@ li {
   display: grid;
   grid-template-columns: 100px 100px 100px;
 }
+.form {
+  text-align: left;
+}
 
 form {
   display: inline-grid;
-  width: 250px;
+  width: 290px;
   height: 200px;
 }
 
@@ -225,6 +230,9 @@ form {
 }
 
 @media only screen and (min-width: 750px) and (max-width: 899px) {
+  .margin-article {
+    margin-left: 0;
+  }
   .article-list {
     width: 95%;
     flex: 1;
@@ -272,6 +280,9 @@ form {
 }
 
 @media only screen and (min-width: 900px) {
+  .margin-article {
+    margin-left: 0;
+  }
   .article-list {
     width: 95%;
     flex: 1;
